@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Blog from "../../Blog/Blog";
+import Blog from "../Blog/Blog";
+import Cart from "../Cart/Cart";
 
 const Blogs = () => {
 
@@ -23,15 +24,15 @@ const Blogs = () => {
                 to become an exceptionally well world-class Programmer.
             </p>
 
-            <div className="md:flex">
-                <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="lg:flex gap-4">
+                <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-3">
                     {
                         blogs.map(blog => <Blog key={blog.recipe_id} blog={blog}></Blog>)
 
                     }
                 </div>
-                <div className="w-1/3">
-                    Cart
+                <div className="lg:w-1/3 rounded-xl border-gray-100 border-2 p-6 min-h-full">
+                    <Cart></Cart>
                 </div>
             </div>
         </section>
