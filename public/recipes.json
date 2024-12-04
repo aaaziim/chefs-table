@@ -3,7 +3,7 @@
         "recipe_id": 1,
         "recipe_name": "Chicken Teriyaki",
         "short_description": "A savory Japanese dish with a sweet soy glaze.",
-        "recipe_image": "https://example.com/images/chicken_teriyaki.jpg",
+        "recipe_image": "https://raw.githubusercontent.com/aaaziim/chefs-table/refs/heads/main/src/assets/Images/ChickenTeriyaki.jpeg",
         "ingredients": [
             "550 g chicken breast",
             "120 ml soy sauce",
@@ -19,7 +19,7 @@
         "recipe_id": 2,
         "recipe_name": "Basil Pesto Pasta",
         "short_description": "A creamy pasta dish with fresh basil pesto.",
-        "recipe_image": "https://example.com/images/basil_pesto_pasta.jpg",
+        "recipe_image": "https://raw.githubusercontent.com/aaaziim/chefs-table/refs/heads/main/src/assets/Images/BasilPestoPasta.jpg",
         "ingredients": [
             "400 g spaghetti",
             "100 g basil leaves",
@@ -35,7 +35,7 @@
         "recipe_id": 3,
         "recipe_name": "Mushroom Risotto",
         "short_description": "Creamy risotto with earthy mushrooms.",
-        "recipe_image": "https://example.com/images/mushroom_risotto.jpg",
+        "recipe_image": "https://raw.githubusercontent.com/aaaziim/chefs-table/refs/heads/main/src/assets/Images/mushroom-risotto.jpg",
         "ingredients": [
             "300 g Arborio rice",
             "400 g mushrooms",
@@ -51,7 +51,7 @@
         "recipe_id": 4,
         "recipe_name": "Grilled Salmon",
         "short_description": "Simple and healthy grilled salmon fillets.",
-        "recipe_image": "https://example.com/images/grilled_salmon.jpg",
+        "recipe_image": "https://raw.githubusercontent.com/aaaziim/chefs-table/refs/heads/main/src/assets/Images/Grilled%20Salmon.jpg",
         "ingredients": [
             "2 salmon fillets",
             "10 ml olive oil",
@@ -67,7 +67,7 @@
         "recipe_id": 5,
         "recipe_name": "Chicken Caesar Salad",
         "short_description": "A classic salad with grilled chicken and Caesar dressing.",
-        "recipe_image": "https://example.com/images/chicken_caesar_salad.jpg",
+        "recipe_image": "https://raw.githubusercontent.com/aaaziim/chefs-table/refs/heads/main/src/assets/Images/Chicken%20Caesar%20Salad.jpg",
         "ingredients": [
             "200 g chicken breast",
             "100 g romaine lettuce",
@@ -83,7 +83,7 @@
         "recipe_id": 6,
         "recipe_name": "Beef Stroganoff",
         "short_description": "Creamy beef stroganoff with mushrooms.",
-        "recipe_image": "https://example.com/images/beef_stroganoff.jpg",
+        "recipe_image": "https://raw.githubusercontent.com/aaaziim/chefs-table/refs/heads/main/src/assets/Images/Beef%20Stroganoff.jpeg",
         "ingredients": [
             "500 g beef sirloin",
             "200 g mushrooms",

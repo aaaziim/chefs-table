@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
 import Blog from "../../Blog/Blog";
 
 const Blogs = () => {
+
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+        fetch("recipes.json")
+            .then(res => res.json())
+            .then(data => setBlogs(data))
+    }, [])
     return (
         <section className="my-6">
             <h1 className="text-3xl text-center">
@@ -15,8 +24,11 @@ const Blogs = () => {
             </p>
 
             <div className="md:flex">
-                <div className="md:w-2/3">
-                    {<Blog></Blog>}
+                <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {
+                        blogs.map(blog => <Blog key={blog.recipe_id} blog={blog}></Blog>)
+
+                    }
                 </div>
                 <div className="w-1/3">
                     Cart
