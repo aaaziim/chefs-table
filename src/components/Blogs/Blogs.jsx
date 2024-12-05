@@ -9,6 +9,10 @@ const Blogs = () => {
 
     const [blogs, setBlogs] = useState([]);
     const [carts, setCarts] = useState([]);
+    const [processingCarts, setProcessingCarts] = useState([]);
+
+    const [time, setTime] = useState(0)
+    const [calories, setCalories] = useState(0)
     const notify = () => toast("This is already in cart");
 
     useEffect(() => {
@@ -16,7 +20,8 @@ const Blogs = () => {
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
-
+    let totalCalories = 0;
+    let totalTime = 0;
     const handleWantToCook = (item) => {
         const newCart = [...carts];
         if (newCart.includes(item)) {
@@ -26,9 +31,37 @@ const Blogs = () => {
             setCarts(newCart)
         }
 
+    }
+    const handleRemoveFromWantToCook = (item) => {
+        const newCart = carts.filter(cart => cart.recipe_id !== item.recipe_id)
+
+        setCarts(newCart)
 
 
     }
+
+    const handleProcessing = (item) => {
+        const newProcessingCart = [...processingCarts];
+
+        if (newProcessingCart.includes(item)) {
+            toast("This is already in process");
+        } else {
+            newProcessingCart.push(item);
+            setProcessingCarts(newProcessingCart);
+            handleRemoveFromWantToCook(item)
+            // Calculate totals based on the updated cart
+            let totalCalories = 0;
+            let totalTime = 0;
+
+            newProcessingCart.forEach(recipe => {
+                totalCalories += parseInt(recipe.calories); // Extract numeric value
+                totalTime += parseInt(recipe.preparing_time); // Extract numeric value
+            });
+
+            setCalories(totalCalories);
+            setTime(totalTime);
+        }
+    };
     return (
         <section className="my-6">
             <h1 className="text-3xl text-center">
@@ -61,7 +94,7 @@ const Blogs = () => {
                     <div>
                         <h1 className="text-2xl font-bold text-center my-2 pb-2 border-b-2">Want to Cook: {carts.length}</h1>
                         <ToastContainer ></ToastContainer>
-                        <table className="w-full border-collapse">
+                        <table className="w-full border-collapse my-8">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -74,13 +107,47 @@ const Blogs = () => {
 
                                 {
                                     carts.map((cart, idx) => <Cart key={cart.recipe_id} cart={cart}
+                                        handleProcessing={handleProcessing}
                                         idx={idx}></Cart>)
                                 }
 
                             </tbody>
                         </table>
+                        <div>
+                            <h1 className="text-2xl font-bold text-center my-2 pb-2 border-b-2">Currently Cooking: {processingCarts.length}</h1>
+                            <table className="w-full border-collapse text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Time</th>
+                                        <th>Calories</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        processingCarts.map((processingCart, idx) => <CartProcessing key={processingCart.recipe_id} processingCart={processingCart}
+                                            idx={idx}></CartProcessing>)
+                                    }
 
-                        <CartProcessing></CartProcessing>
+
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td className="px-4 py-2">
+                                            Total Time = <br />
+                                            {time} Minutes
+                                        </td>
+                                        <td className="px-4 py-2">
+                                            Total Calories = <br />
+                                            {calories} Calories
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
                     </div>
 
 
