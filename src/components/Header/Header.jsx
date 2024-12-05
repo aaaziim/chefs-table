@@ -2,7 +2,7 @@ import Banner from "../../assets/Images/bgbanner.jpg"
 const Header = () => {
     return (
         <>
-            <div className="md:flex justify-around items-center gap-4 text-center">
+            <div className="md:flex justify-around items-center gap-4 text-center h-20">
 
 
                 <div>
