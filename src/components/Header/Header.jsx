@@ -4,7 +4,7 @@ import { FaUser } from "react-icons/fa";
 const Header = () => {
     return (
         <>
-            <div className="md:flex justify-around items-center gap-4 text-center h-20">
+            <div className="md:flex justify-between items-center gap-4 text-center h-20">
 
 
                 <div>
@@ -34,7 +34,7 @@ const Header = () => {
             </div >
             <section
                 style={{ backgroundImage: `url(${Banner})` }}
-                className="bg-cover bg-center h-screen text-center flex justify-center items-center"
+                className="bg-cover bg-center h-screen text-center flex justify-center items-center rounded-2xl"
             >
                 <div>
                     <h1 className="text-6xl ">
